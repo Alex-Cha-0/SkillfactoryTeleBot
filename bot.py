@@ -50,7 +50,8 @@ def echo_message(message):
         else:
             raise bot.reply_to(message, str(ValException("Введена не верная валюта")))
 
-        bot.reply_to(message, f"{api.get_price(base, quote, amount)} {quote}")
+        bot.reply_to(message, f"Сумма конвертации {amount} {base} в {quote} составляет "
+                              f"{api.get_price(base, quote, amount)} {quote}")
 
     except TypeError:
         pass
